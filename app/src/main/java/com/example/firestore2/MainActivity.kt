@@ -8,6 +8,7 @@ import android.widget.TextView
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.getField
 import com.google.firebase.ktx.Firebase
+import com.google.protobuf.Empty
 import java.lang.reflect.Array
 class MainActivity : AppCompatActivity() {
     private val charset = Charsets.UTF_8
@@ -34,9 +35,10 @@ class MainActivity : AppCompatActivity() {
             Tasks.add(document.get("first").toString())
         }
     }
-
-
-        button.setOnClickListener {text.text = Tasks.removeAt(0)}
+        button.setOnClickListener {
+            text.text = Tasks.random()
+            Tasks.removeAt(0)
+        }
 
 
     }
@@ -48,4 +50,5 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
+
 
