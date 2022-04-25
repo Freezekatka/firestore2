@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             text.text = Tasks.random()
             Tasks.removeAt(0)
+
         }
 
 
